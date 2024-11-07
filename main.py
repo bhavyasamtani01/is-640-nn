@@ -19,12 +19,12 @@ for k in range(20):
     
     loss = sum((yout - ygt) ** 2 for ygt, yout in zip(ys, ypred))
 
-    # Backward pass
+    
     for p in n.parameters():
         p.grad = 0.0
-    loss.backward()  # All of the gradients are accumulated and start from zero
+    loss.backward()  
 
-    # Update weights
+    
     for p in n.parameters():
         p.data += -0.1 * p.grad 
 
